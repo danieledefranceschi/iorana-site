@@ -36,7 +36,8 @@
   }
   *,*::before,*::after{box-sizing:inherit}
 
-  html,body{height:100%;margin:0}
+  html,body{min-height:100%;margin:0}
+  body{min-height:100vh}
 
   body{
     background:var(--nero);
@@ -108,8 +109,20 @@
     to{opacity:1;transform:none}
   }
 
+  .catalogo{
+    display:flex;align-items:center;gap:1.4rem;margin:0 0 2.6rem;text-align:left;
+    color:var(--testo);text-decoration:none;
+    opacity:0;animation:entra 1.6s ease-out 1.05s forwards;
+  }
+  .catalogo img{width:92px;height:auto;display:block;box-shadow:0 8px 24px rgba(0,0,0,.6),0 0 0 1px rgba(184,168,136,.2);transition:transform .3s ease}
+  .catalogo:hover img,.catalogo:focus-visible img{transform:translateY(-3px)}
+  .catalogo .t{font-size:1.35rem;letter-spacing:.14em;line-height:1.2}
+  .catalogo .a{font-style:italic;opacity:.85;line-height:1.3}
+  .catalogo .u{color:var(--bronzo-chiaro);font-size:.95rem;letter-spacing:.06em;margin-top:.3rem}
+  body{padding-bottom:4rem}
+
   @media (prefers-reduced-motion:reduce){
-    .logo,.claim,.riga,.contatto{animation:none;opacity:1}
+    .logo,.claim,.riga,.contatto,.catalogo{animation:none;opacity:1}
   }
 
   .legale{
@@ -129,6 +142,15 @@
   <p class="claim">Dove cercare le risposte?</p>
 
   <hr class="riga">
+
+  <a class="catalogo" href="anomia/">
+    <img src="anomia/copertina.jpg" width="1000" height="1500" alt="">
+    <span>
+      <span class="t">ANOMIA</span><br>
+      <span class="a">romanzo di Daniele Defranceschi</span><br>
+      <span class="u">dal 3 dicembre 2026</span>
+    </span>
+  </a>
 
   <p class="contatto">
     <a href="mailto:info@iorana.it">info@iorana.it</a>
